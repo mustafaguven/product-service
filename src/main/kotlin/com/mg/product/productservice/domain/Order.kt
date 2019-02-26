@@ -1,4 +1,4 @@
-package com.mg.product.productservice.service
+package com.mg.product.productservice.domain
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

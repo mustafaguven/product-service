@@ -4,6 +4,7 @@ import com.mg.product.productservice.model.Product
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.cloud.context.config.annotation.RefreshScope
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -41,7 +42,7 @@ class ProductController : AbstractController() {
     @RequestMapping(value = ["/"])
     fun instanceId() = "{ \"running_instance_id\": \"$instance\"}"
 
-    @RequestMapping(value = ["/{id}"])
+    @GetMapping(value = ["/{id}"])
     fun getCatalog(@PathVariable("id") id: Int?): Product {
         return productMap[id]!!
     }

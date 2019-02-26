@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j
 
 @Slf4j
 abstract class AbstractController {
-
     companion object {
         val log = logger(this)
     }
